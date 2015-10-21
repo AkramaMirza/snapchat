@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <objectAnimator
+        android:startOffset="300"
+        android:interpolator="@android:interpolator/decelerate_quint"
+        android:propertyName="translationY"
+        android:duration="400"
+        android:valueFrom="300"
+        android:valueTo="0" />
+
+</set>

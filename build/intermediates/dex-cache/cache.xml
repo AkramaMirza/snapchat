@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="C:\Users\CR7\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\21.0.3\support-annotations-21.0.3.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="4b74cefe1f0c1b819e7260c8627a14674e37fd35">
+        <dex dex="C:\Users\CR7\Desktop\PhotoBabble\app\build\intermediates\pre-dexed\debug\support-annotations-21.0.3-50539391d89335d3b8d9062ed896a5f8beae6dd3.jar" />
+    </item>
+    <item
+        jar="C:\Users\CR7\Desktop\PhotoBabble\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
+        <dex dex="C:\Users\CR7\Desktop\PhotoBabble\app\build\intermediates\pre-dexed\debug\classes-af71b0ef162bccee5e1fe1917ddee6c734de77e7.jar" />
+    </item>
+    <item
+        jar="C:\Users\CR7\Desktop\PhotoBabble\app\build\intermediates\exploded-aar\com.github.navasmdc\MaterialDesign\1.5\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="12b228574de7977e56e41cbfb385b1463bbdb41a">
+        <dex dex="C:\Users\CR7\Desktop\PhotoBabble\app\build\intermediates\pre-dexed\debug\classes-246484a52d976fb827379192d0713d12ce0d440b.jar" />
+    </item>
+    <item
+        jar="C:\Users\CR7\Desktop\PhotoBabble\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\21.0.3\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="81d42bf983a8741f4888a6e333e454e4a5e0eeb7">
+        <dex dex="C:\Users\CR7\Desktop\PhotoBabble\app\build\intermediates\pre-dexed\debug\classes-8fbb5404d3374dace9b5516f889f47861ea18509.jar" />
+    </item>
+    <item
+        jar="C:\Users\CR7\Desktop\PhotoBabble\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\libs\internal_impl-21.0.3.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
+        <dex dex="C:\Users\CR7\Desktop\PhotoBabble\app\build\intermediates\pre-dexed\debug\internal_impl-21.0.3-4b3a9eb5e2a1243e7f69137792999b67aae3aefc.jar" />
+    </item>
+    <item
+        jar="C:\Users\CR7\Desktop\PhotoBabble\app\libs\Parse-1.10.2.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="a859414011ce2c18187acc83319688e6bd340635">
+        <dex dex="C:\Users\CR7\Desktop\PhotoBabble\app\build\intermediates\pre-dexed\debug\Parse-1.10.2-8b822a88c5f33f661d918c0557602199372e2afe.jar" />
+    </item>
+    <item
+        jar="C:\Users\CR7\.gradle\caches\modules-2\files-2.1\com.parse.bolts\bolts-android\1.2.0\6ee2953ccf51ce72b6d548c30c4633b99eb4f9dd\bolts-android-1.2.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="6ee2953ccf51ce72b6d548c30c4633b99eb4f9dd">
+        <dex dex="C:\Users\CR7\Desktop\PhotoBabble\app\build\intermediates\pre-dexed\debug\bolts-android-1.2.0-17fe5fd23c1a3795e2ea10d7dc2ce33141b7b593.jar" />
+    </item>
+
+</items>

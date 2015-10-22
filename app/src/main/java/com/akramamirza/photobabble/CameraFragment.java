@@ -124,6 +124,14 @@ public class CameraFragment extends android.support.v4.app.Fragment {
         final Button switchCameraButton = (Button) rootView.findViewById(R.id.switchCameraButton);
         final Button captureButton = (Button) rootView.findViewById(R.id.captureButton);
         final Button crossButton = (Button) rootView.findViewById(R.id.crossButton);
+        final Button sendButton = (Button) rootView.findViewById(R.id.sendButton);
+
+        final Button button = (Button) rootView.findViewById(R.id.button);
+        int buttonWidthHeight = getResources().getDisplayMetrics().heightPixels / 14;
+        ViewGroup.LayoutParams buttonLayoutParams = button.getLayoutParams();
+        buttonLayoutParams.height = buttonWidthHeight;
+        buttonLayoutParams.width = buttonWidthHeight;
+        button.setLayoutParams(buttonLayoutParams);
 
         // set the width and height of the button to the height of the screen divided by 14
         int switchCameraButtonWidthHeight = getResources().getDisplayMetrics().heightPixels / 14;
@@ -137,7 +145,6 @@ public class CameraFragment extends android.support.v4.app.Fragment {
                 switchCamera();
             }
         });
-
 
         int captureButtonWidthHeight = getResources().getDisplayMetrics().heightPixels / 7;
         ViewGroup.LayoutParams captureButtonLayoutParams = captureButton.getLayoutParams();
@@ -166,18 +173,18 @@ public class CameraFragment extends android.support.v4.app.Fragment {
                         fos.close();*/
 
                         // do this when the user presses the send button, otherwise keep bitmap offline until he sends
-                        ParseFile imageFile = new ParseFile("snap.jpg", byteArray);
+                        /*ParseFile imageFile = new ParseFile("snap.jpg", byteArray);
                         imageFile.saveInBackground();
                         ParseObject snap = new ParseObject("Snap");
                         snap.put("imageFile", imageFile);
-                        snap.saveInBackground();
+                        snap.saveInBackground();*/
                     }
                 };
                 Thread takePictureThread = new Thread(takePictureRunnable);
                 takePictureThread.start();
 
                 captureButton.getStateListAnimator().jumpToCurrentState();
-                doAnimation(R.animator.scale_in, crossButton);
+                doAnimation(R.animator.scale_in, crossButton, sendButton);
                 getCircleAnimator(captureButton).start();
                 getCircleAnimator(switchCameraButton).start();
 
@@ -211,7 +218,7 @@ public class CameraFragment extends android.support.v4.app.Fragment {
             }
         });
 
-        int crossButtonWidthHeight = getResources().getDisplayMetrics().heightPixels / 30;
+        int crossButtonWidthHeight = getResources().getDisplayMetrics().heightPixels / 20;
         ViewGroup.LayoutParams crossButtonLayoutParams = crossButton.getLayoutParams();
         crossButtonLayoutParams.height = crossButtonWidthHeight;
         crossButtonLayoutParams.width = crossButtonWidthHeight;
@@ -219,9 +226,6 @@ public class CameraFragment extends android.support.v4.app.Fragment {
         crossButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                crossButton.getStateListAnimator().jumpToCurrentState();
-                getCircleAnimator(crossButton).start();
-                doAnimation(R.animator.scale_in, switchCameraButton, captureButton);
 
                 Thread thread = new Thread(new Runnable() {
                     @Override
@@ -231,8 +235,21 @@ public class CameraFragment extends android.support.v4.app.Fragment {
                 });
                 thread.start();
 
+                crossButton.getStateListAnimator().jumpToCurrentState();
+                getCircleAnimator(crossButton).start();
+                getCircleAnimator(sendButton).start();
+                doAnimation(R.animator.scale_in, switchCameraButton, captureButton);
+
+
+
             }
         });
+
+        int sendButtonWidthHeight = getResources().getDisplayMetrics().heightPixels / 12;
+        ViewGroup.LayoutParams sendButtonLayoutParams = sendButton.getLayoutParams();
+        sendButtonLayoutParams.height = sendButtonWidthHeight;
+        sendButtonLayoutParams.width = sendButtonWidthHeight;
+        sendButton.setLayoutParams(sendButtonLayoutParams);
 
 
 

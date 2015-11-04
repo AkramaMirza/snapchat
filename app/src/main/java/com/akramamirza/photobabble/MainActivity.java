@@ -19,12 +19,6 @@ public class MainActivity extends FragmentActivity {
 
     static final int LOG_IN_REQUEST = 1;
 
-    private CameraFragment cameraFragment;
-    private StoriesFragment storiesFragment;
-    private ReceivedSnapsFragment receivedSnapsFragment;
-
-    private int pagerPosition;
-
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
@@ -46,16 +40,13 @@ public class MainActivity extends FragmentActivity {
             startActivityForResult(intent, LOG_IN_REQUEST);
         }
 
-        cameraFragment = new CameraFragment();
-        storiesFragment = new StoriesFragment();
-        receivedSnapsFragment = new ReceivedSnapsFragment();
-
-        ViewPager pager = (ViewPager) findViewById(R.id.pager);
-        pager.setAdapter(new MyFragmentPagerAdapter(getSupportFragmentManager()));
-        pager.setCurrentItem(1); // set the position to second item so camera fragment is the first thing
+        if (savedInstanceState == null) {
+            getSupportFragmentManager().beginTransaction()
+                    .add(R.id.mainFrame, new PagerFragment())
+                    .commit();
+        }
 
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -80,30 +71,5 @@ public class MainActivity extends FragmentActivity {
     }
 
 
-    class MyFragmentPagerAdapter extends FragmentPagerAdapter {
 
-        public MyFragmentPagerAdapter(FragmentManager fm) {
-            super(fm);
-        }
-
-        @Override
-        public Fragment getItem(int position) {
-
-            switch (position) {
-                case 0:
-                    return receivedSnapsFragment;
-                case 1:
-                    return cameraFragment;
-                case 2:
-                    return storiesFragment;
-            }
-
-            return cameraFragment;
-        }
-
-
-        @Override
-        public int getCount() { return 3; }
-
-    }
 }

@@ -56,12 +56,5 @@
         android:layout_marginBottom="15dp"
         android:visibility="gone"/>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/send_button_pic"
-        android:id="@+id/button"
-        android:visibility="gone"
-        android:layout_marginLeft="100dp"/>
 
 </RelativeLayout>

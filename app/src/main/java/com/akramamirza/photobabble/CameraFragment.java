@@ -4,14 +4,13 @@ import android.animation.Animator;
 import android.animation.AnimatorInflater;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.AnimatorSet;
-import android.animation.StateListAnimator;
-import android.animation.TimeInterpolator;
 import android.app.Activity;
+import android.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.graphics.Bitmap;
 import android.hardware.Camera;
 import android.net.Uri;
 import android.os.Bundle;
-import android.app.Fragment;
 import android.os.Environment;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -21,15 +20,9 @@ import android.view.ViewGroup;
 import android.view.animation.DecelerateInterpolator;
 import android.widget.Button;
 import android.widget.FrameLayout;
-import android.widget.RelativeLayout;
-
-import com.parse.ParseFile;
-import com.parse.ParseObject;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -125,13 +118,6 @@ public class CameraFragment extends android.support.v4.app.Fragment {
         final Button captureButton = (Button) rootView.findViewById(R.id.captureButton);
         final Button crossButton = (Button) rootView.findViewById(R.id.crossButton);
         final Button sendButton = (Button) rootView.findViewById(R.id.sendButton);
-
-        final Button button = (Button) rootView.findViewById(R.id.button);
-        int buttonWidthHeight = getResources().getDisplayMetrics().heightPixels / 14;
-        ViewGroup.LayoutParams buttonLayoutParams = button.getLayoutParams();
-        buttonLayoutParams.height = buttonWidthHeight;
-        buttonLayoutParams.width = buttonWidthHeight;
-        button.setLayoutParams(buttonLayoutParams);
 
         // set the width and height of the button to the height of the screen divided by 14
         int switchCameraButtonWidthHeight = getResources().getDisplayMetrics().heightPixels / 14;
@@ -250,6 +236,15 @@ public class CameraFragment extends android.support.v4.app.Fragment {
         sendButtonLayoutParams.height = sendButtonWidthHeight;
         sendButtonLayoutParams.width = sendButtonWidthHeight;
         sendButton.setLayoutParams(sendButtonLayoutParams);
+        sendButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentManager fm = getParentFragment().getActivity().getSupportFragmentManager();
+                fm.beginTransaction()
+                        .replace(R.id.mainFrame, new SendFragment())
+                        .commit();
+            }
+        });
 
 
 
